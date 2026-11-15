@@ -1,0 +1,377 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Case Study SRK Zürich</title><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: ein Arbeitspapier in einer Spalte – Befund, Ebenenmodell, Varianten, Matrix */
+:root{
+  --bg:#FBFAF9; --surface:#FFFFFF; --ink:#1F1D1D; --muted:#6A6362; --line:#E4DEDC;
+  --red:#D7001A; --rose:#F9D9DB; --rose2:#FCEDEE; --sand:#EFE9E2;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171515; --surface:#211E1E; --ink:#F2EEED; --muted:#AAA2A0; --line:#3A3434;
+  --red:#FF4D5E; --rose:#4A2328; --rose2:#30201F; --sand:#2C2724; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171515; --surface:#211E1E; --ink:#F2EEED; --muted:#AAA2A0; --line:#3A3434;
+  --red:#FF4D5E; --rose:#4A2328; --rose2:#30201F; --sand:#2C2724; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:22px;font-weight:700}
+h3{font-size:16px;font-weight:600}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.lead{font-size:17px;color:var(--muted);max-width:62ch}
+header{display:flex;flex-direction:column;gap:12px}
+header .rule{width:120px;height:4px;background:var(--red);margin-top:4px}
+section{display:flex;flex-direction:column;gap:18px}
+.note{font-size:13px;color:var(--muted)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+tr:last-child td{border-bottom:0}
+.sys td:first-child{font-family:var(--mono);color:var(--muted);width:28px}
+.sys td:nth-child(2){font-weight:600;white-space:nowrap}
+.frictions{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.fr{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fr b{font-weight:600}
+.fr .where{font-size:13px;color:var(--muted)}
+/* Ebenenmodell */
+.levels{display:flex;flex-direction:column;gap:6px}
+.lv{display:grid;grid-template-columns:150px 1fr 190px;gap:16px;align-items:center;padding:14px 16px;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
+.lv .k{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lv .v{font-weight:600}
+.lv .v small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.lv .w{font-size:13px;color:var(--muted)}
+.lv.new{background:var(--rose2);border-color:var(--rose)}
+.lv.new .k{color:var(--red)}
+.tag{color:inherit;text-decoration:none;display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--surface);border:1px solid var(--line);margin:2px 4px 2px 0;font-weight:500}
+.lv.new .tag{border-color:var(--rose)}
+@media (max-width:700px){.lv{grid-template-columns:1fr;gap:6px}}
+/* Varianten */
+.vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.var{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.var.rec{border-color:var(--red);box-shadow:inset 0 3px 0 var(--red)}
+.var .badge{align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.var ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.var .pc{font-size:13px;color:var(--muted)}
+.dots{font-family:var(--mono);letter-spacing:2px;color:var(--red);white-space:nowrap}
+.crit td:first-child{font-weight:600}
+.crit td.c{text-align:center;width:120px}
+.crit th.c{text-align:center}
+/* Empfehlung */
+.rec-box{background:var(--rose2);border:1px solid var(--rose);border-radius:6px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.rec-box ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+/* Matrix */
+.controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{font:500 13px var(--sans);color:var(--ink);background:transparent;border:0;padding:8px 14px;cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
+.grp{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mx th.t{text-align:center;min-width:92px;text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--ink);vertical-align:bottom;line-height:1.3}
+.mx td.m{text-align:center;font-size:16px;color:var(--red);width:92px}
+.mx td.m.s{color:var(--muted)}
+.mx td.of{font-weight:500}
+.mx td.of small{display:block;color:var(--muted);font-weight:400;font-size:12.5px}
+.mx td.b{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.mx tfoot td{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;text-align:center;background:var(--sand);border-bottom:0}
+.mx tfoot td:first-child,.mx tfoot td:nth-child(2){text-align:left;font-family:var(--sans)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend span b{color:var(--red);font-weight:400}
+.gap{color:var(--red);font-weight:600}
+.zh-roof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--rose2);border:1px solid var(--rose);border-radius:6px;padding:14px}
+.zh-roof div{display:flex;flex-direction:column;gap:4px;min-width:0;padding:4px 8px}
+.zh-roof b{font-weight:600;font-size:14px;line-height:1.35}
+.zk{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+@media (max-width:700px){.zh-roof{grid-template-columns:1fr}}
+table.zh{min-width:820px;font-size:13.5px}
+table.zh th{text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink)}
+table.zh tbody th{width:140px;font-weight:600;background:var(--sand)}
+table.zh tbody th small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+table.zh td{width:22%;line-height:1.45}
+.zg{display:inline-block;font-weight:600;color:var(--red)}
+.zg::before{content:"→ "}
+tr.kb td{font-style:italic;font-weight:600;font-size:14.5px}
+.wk{display:inline-block;margin-top:4px;color:var(--red);font-weight:600}
+.seg{flex-wrap:wrap;max-width:100%}
+.grp{max-width:100%}
+.zh-fig{margin:0;position:relative;border:2px dashed var(--red);border-radius:8px;padding:12px;background:#FFFFFF;display:flex;flex-direction:column;gap:8px}
+.zh-fig img{display:block;width:100%;height:auto;border-radius:4px}
+.zh-fig figcaption{font-size:13px;color:#6A6362}
+.zh-badge{position:absolute;top:-13px;left:16px;background:var(--red);color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+.cs-band{margin:-40px calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 36px;padding:14px max(16px, env(safe-area-inset-left, 0px));background:var(--surface);border-bottom:3px solid var(--red)}
+.cs-in{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px}
+.cs-l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cs-k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.cs-t{font-size:15px;font-weight:600}
+.cs-r{font-size:14px;color:var(--muted)}
+.draft{max-width:68ch;font-size:14px;padding:12px 16px;border-left:3px solid var(--red);background:var(--rose2);color:var(--ink)}
+.how{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.how em{font-style:normal;font-weight:600}
+.mx tr.frh td{background:var(--rose2);font-family:var(--sans);font-weight:600;text-align:left;color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-top:1px solid var(--rose)}
+.mx tr.frh .ann{font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);margin-left:8px}
+.mx tr.frr td{background:var(--rose2)}
+.mx .dots{font-size:12px}
+.start{display:flex;flex-direction:column;gap:22px}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.choice{position:relative;display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:inherit;text-decoration:none;min-width:0;transition:border-color .15s,box-shadow .15s,transform .15s}
+a.choice:hover{border-color:var(--red);box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-1px)}
+a.choice:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.choice .num{font:700 13px var(--mono);color:var(--red);letter-spacing:.06em}
+.choice h2{font-size:20px}
+.choice p{color:var(--muted);font-size:14.5px}
+.choice .go{margin-top:auto;padding-top:6px;font-weight:600;color:var(--red);font-size:14px}
+.choice.off{background:transparent;border-style:dashed}
+.choice.off .go{color:var(--muted)}
+.sep{height:1px;background:var(--line);margin:4px 0 0}
+/* Hinweis Ebenen-Schalter */
+#segVar button[data-v="F"]{position:relative}
+.nudge #segVar button[data-v="F"]{animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:inset 0 0 0 0 rgba(215,0,26,.0)}40%{box-shadow:inset 0 0 0 2px var(--red)}100%{box-shadow:inset 0 0 0 0 rgba(215,0,26,0)}}
+.hint{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--red);background:var(--rose2);border:1px solid var(--rose);border-radius:99px;padding:6px 12px;transition:opacity .3s}
+.hint .arr{display:inline-block;animation:nudge 1.2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+.hint.gone{opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.nudge #segVar button[data-v="F"],.hint .arr{animation:none}}
+/* Präsentation */
+.deck{display:flex;flex-direction:column;gap:12px}
+.stage{position:relative;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;touch-action:pan-y}
+.stage img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.stage .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;color:var(--muted)}
+.stage .ph b{color:var(--ink);font-size:18px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:#1F1D1D;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.nav:hover{border-color:var(--red);color:var(--red)}
+.nav:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.nav.prev{left:10px}.nav.next{right:10px}
+.nav[disabled]{opacity:.35;cursor:default}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.count{font:500 13px var(--mono);color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--sans);color:#FFFFFF;background:var(--red);border:0;border-radius:6px;padding:10px 16px;text-decoration:none}
+.btn:hover{filter:brightness(.92)}
+.btn.off{background:var(--line);color:var(--muted);pointer-events:none}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.thumbs button{flex:0 0 auto;width:112px;aspect-ratio:16/9;padding:0;border:2px solid transparent;border-radius:4px;overflow:hidden;cursor:pointer;background:#fff}
+.thumbs button[aria-current="true"]{border-color:var(--red)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:18px}
+footer a{color:inherit}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="cs-band"><div class="cs-in">
+  <div class="cs-l"><span class="cs-k">Case Study</span><span class="cs-t">Leitung Marketing, Kommunikation &amp; Mittelbeschaffung · SRK Kanton Zürich</span></div>
+  <div class="cs-r">Philip Michel · November 2026</div>
+</div></div>
+<div class="wrap">
+<section class="start" aria-labelledby="start-h">
+  <h1 id="start-h">Willkommen – was möchten Sie ansehen?</h1>
+  <div class="choices">
+    <a class="choice" href="#exkurs">
+      <span class="num">01 · Exkurs zur Case Study</span>
+      <h2>Themenarchitektur und Ansprache</h2>
+      <p>Überlegungen, wie Themen das Angebot ordnen und Fachbereiche verbinden – mit Werkzeug zum Filtern und dem Zielhaus als Beispiel.</p>
+      <span class="go">Zum Exkurs ↓</span>
+    </a>
+    <a class="choice" href="#praesentation">
+      <span class="num">02 · Präsentation</span>
+      <h2>Folien durchblättern und herunterladen</h2>
+      <p>Präsentation vom 22.11.2026 inklusive Backup-Folien – als Slideshow und als PDF.</p>
+      <span class="go">Zur Präsentation ↓</span>
+    </a>
+  </div>
+  <div class="sep"></div>
+</section>
+<header id="exkurs">
+  <span class="eyebrow">01 · Exkurs · Idee zur Diskussion · Priorität 2 · Steuerungsrahmen</span>
+  <h2 style="font-size:clamp(26px,3.6vw,36px)">Themenarchitektur SRK Zürich</h2>
+  <div class="rule"></div>
+  <p class="lead">Rund 35 Angebote, heute in sieben Ordnungssystemen nebeneinander. Die Idee: Zwei Ebenen von Themen schaffen Orientierung. Leitthemen ordnen das Angebot, Fokusthemen verbinden alle Fachbereiche zu einer Geschichte.</p>
+  <p class="draft"><b>Ein erster Denkanstoss von aussen, kein fertiges Konzept.</b> Themen, Zuordnungen und Einschätzungen beruhen auf öffentlich zugänglichen Informationen. Sie sind als Ausgangspunkt gedacht, um sie gemeinsam mit dem Team und den Fachbereichen zu prüfen und weiterzuentwickeln.</p>
+</header>
+
+<section>
+  <div class="levels">
+    <div class="lv"><span class="k">Leitthemen · ordnen</span><span class="v">Stabil, nah an den Geschäftsbereichen<small><span class="tag">Selbstbestimmt leben</span><span class="tag">Ankommen und teilhaben</span><span class="tag">Chancen durch Bildung</span></small></span><span class="w">Website, Jahresbericht, News-Tags</span></div>
+    <div class="lv new"><span class="k">Fokusthemen · verbinden</span><span class="v">Gesellschaftliche Anliegen über alle Fachbereiche<small><span class="tag">Gemeinsam statt einsam</span><span class="tag">Pflege und Betreuung sichern</span><span class="tag">Familien entlasten</span><a class="tag" href="#beispiel">Selbstbestimmt älter werden ↓</a><span class="tag">Chancen für junge Menschen</span></small></span><span class="w">Kampagnen, Medien, Spendenzwecke und Gönnerkommunikation – 2 pro Jahr</span></div>
+  </div>
+  <p class="note">Kriterien für ein Fokusthema: mindestens drei Fachbereiche tragen bei, Freiwillige haben eine Rolle, es taugt für Spenden und hat einen aktuellen Anlass. Lebensphasen sind keine eigene Ordnung, sondern eine Zielgruppen-Linse: Der Filter «Für wen» zeigt, welche Angebote eines Themas Kinder und Familien, junge Menschen, Erwachsene oder ältere Menschen erreichen.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Werkzeug</span>
+  <h2>Angebote nach Themen bündeln – für Kommunikation und Kampagnen</h2>
+  <p>Die Tabelle zeigt, welche Angebote zu welchem Thema beitragen. So wird sichtbar, welche Geschichten sich über mehrere Fachbereiche erzählen lassen, wen sie erreichen und wofür sie in der Mittelbeschaffung taugen.</p>
+  <ol class="how">
+    <li><b>Ebene wählen.</b> <em>Leitthemen</em> zeigen, wie sich das Angebot auf Website und im Jahresbericht ordnen lässt. <em>Fokusthemen</em> zeigen, welche Angebote gemeinsam eine Kampagne tragen – mit einer Einschätzung für Spenden, Legate, Stiftungen und Firmen.</li>
+    <li><b>Fachbereich filtern.</b> Welchen Beitrag leistet ein Bereich zu den Themen?</li>
+    <li><b>Zielgruppe wählen.</b> «Für wen» zeigt, welche Angebote Kinder und Familien, junge Menschen, Erwachsene oder ältere Menschen erreichen.</li>
+  </ol>
+  <p class="note">Lesehilfe: In der Fusszeile steht, wie viele Angebote und wie viele der drei Geschäftsbereiche zu einem Thema beitragen. Ein gutes Fokusthema bindet alle drei ein.</p>
+  <div class="controls nudge" id="ctl">
+    <div class="grp"><span class="lbl">Ebene</span>
+    <div class="seg" id="segVar" role="group" aria-label="Themenebene wählen">
+      <button type="button" data-v="C" aria-pressed="true">Leitthemen</button>
+      <button type="button" data-v="F" aria-pressed="false">Fokusthemen</button>
+    </div><span class="hint" id="hint"><span class="arr">←</span> Umschalten und die Themen wechseln</span></div>
+    <div class="grp"><span class="lbl">Fachbereich</span>
+    <div class="seg" id="segBer" role="group" aria-label="Fachbereich filtern">
+      <button type="button" data-b="" aria-pressed="true">Alle</button>
+      <button type="button" data-b="Alltag" aria-pressed="false">Alltag</button>
+      <button type="button" data-b="Migration" aria-pressed="false">Migration</button>
+      <button type="button" data-b="Bildung" aria-pressed="false">Bildung</button>
+      <button type="button" data-b="Quer" aria-pressed="false">Quer</button>
+    </div></div>
+    <div class="grp"><span class="lbl">Für wen</span>
+    <div class="seg" id="segLp" role="group" aria-label="Lebensphase filtern">
+      <button type="button" data-l="" aria-pressed="true">Alle</button>
+      <button type="button" data-l="a1" aria-pressed="false">Kinder &amp; Familien</button>
+      <button type="button" data-l="a2" aria-pressed="false">Junge Menschen</button>
+      <button type="button" data-l="a3" aria-pressed="false">Erwachsene</button>
+      <button type="button" data-l="a4" aria-pressed="false">Ältere Menschen</button>
+    </div></div>
+  </div>
+  <div class="legend"><span><b>●</b> Hauptthema</span><span><b style="color:var(--muted)">○</b> trägt auch bei</span><span>Fokusthemen müssen nicht jedes Angebot abdecken</span></div>
+  <div class="scroll"><table class="mx" id="mx"></table></div>
+  <p class="note">Angebote nach Website (Stand November 2026). Die Zuordnung zu Fachbereichen folgt dem Organigramm vom 1.8.2025, das nur als Text vorlag, und ist angenähert. Die Themenzuordnung ist ein Vorschlag zur Diskussion.</p>
+</section>
+
+<section id="beispiel">
+  <span class="eyebrow">Beispiel zur Illustration</span>
+  <h2>Vom Fokusthema zur Kommunikation: «Selbstbestimmt älter werden»</h2>
+  <p>Ein Fokusthema wird über ein Zielhaus in Ziele, Zielgruppen und Botschaften übersetzt. Das Zielhaus unten ist ein Beispiel aus der Präsentation – die Zielhäuser für weitere Fokusthemen entstehen gemeinsam mit den Fachbereichen.</p>
+  <figure class="zh-fig">
+    <span class="zh-badge">Beispiel</span>
+    <a href="zielhaus.jpg" target="_blank" rel="noopener"><img src="zielhaus.jpg" alt="Zielhaus «Selbstbestimmt älter werden»: Strategischer Rahmen, vier Organisationsziele mit Zielgruppen, Kommunikationszielen, Kernbotschaften, gesellschaftlichem Kontext und Wirkung" width="2667" height="1357"></a>
+    <figcaption>Zum Vergrössern auf das Bild tippen. Methodisch angelehnt an das Zielhaus der Kommunikation (Storck, in Zerfass/Volk).</figcaption>
+  </figure>
+</section>
+
+<section id="praesentation">
+  <span class="eyebrow">02 · Präsentation</span>
+  <h2>Präsentation vom 22.11.2026</h2>
+  <p>Alle Folien inklusive Backup zum Durchblättern – mit Pfeiltasten, Wischen oder über die Vorschaubilder. Und als PDF zum Herunterladen.</p>
+  <div class="deck">
+    <div class="stage" id="stage" aria-roledescription="Slideshow" aria-label="Folien der Präsentation">
+      <img id="slide" alt="" hidden>
+      <div class="ph" id="ph"><b>Folien folgen nach der Präsentation</b><span>Hier erscheinen die Folien zum Durchblättern.</span></div>
+      <button class="nav prev" id="prev" type="button" aria-label="Vorherige Folie" hidden>‹</button>
+      <button class="nav next" id="next" type="button" aria-label="Nächste Folie" hidden>›</button>
+    </div>
+    <div class="bar"><span class="count" id="count"></span><a class="btn off" id="pdf" href="#" aria-disabled="true">PDF herunterladen</a></div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+</section>
+
+<footer>
+  <span>Quellen:
+    <a href="https://www.srk-zuerich.ch/ueber-uns/rotes-kreuz-zh/wer-wir-sind">Wer wir sind</a> ·
+    <a href="https://www.srk-zuerich.ch/sites/default/files/2025-10/organigramm-srk-kanton-zuerich.pdf">Organigramm 2025</a> ·
+    <a href="https://www.srk-zuerich.ch/ueber-uns/rotes-kreuz-zh/was-wir-tun">Was wir tun</a> ·
+    <a href="https://www.srk-zuerich.ch/sites/default/files/2025-04/jahresbericht-srk-zuerich-einzelseiten.pdf">Jahresbericht 2024</a> ·
+    <a href="https://www.srk-zuerich.ch/aktuell">Aktuell</a> ·
+    <a href="https://www.redcross.ch/de/ueber-uns/schweizerisches-rotes-kreuz/unsere-strategie">SRK-Strategie 2030</a></span>
+  <span>Philip Michel · Case Study SRK Kanton Zürich</span>
+</footer>
+</div>
+
+<script>
+const THEMES={
+  A:[["a1","Kindheit & Familie"],["a2","Jugend & Berufseinstieg"],["a3","Erwerbsleben & Weiterbildung"],["a4","Alter & Lebensende"]],
+  B:[["b1","Selbstbestimmt älter werden"],["b2","Familien entlasten"],["b3","Ankommen und teilhaben"],["b4","Gesundheit & Pflege stärken"],["b5","Chancen für junge Menschen"],["bx","quer: Mitmachen"]],
+  F:[["f1","Gemeinsam statt einsam"],["f2","Pflege und Betreuung sichern"],["f3","Familien entlasten"],["f4","Selbstbestimmt älter werden"],["f5","Chancen für junge Menschen"],["fx","quer: Mitmachen"]],
+  C:[["c1","Selbstbestimmt leben"],["c2","Ankommen und teilhaben"],["c3","Chancen durch Bildung"],["cx","quer: Mitmachen und unterstützen"]]
+};
+// [Angebot, Zusatz, Fachbereich, A, B, C] – erstes Thema = Hauptthema
+const OFFERS=[
+ ["Rotkreuz-Fahrdienst","","Alltag",["a4"],["b1"],["c1"],["f4", "fx"]],
+ ["Rotkreuz-Notruf","","Alltag",["a4"],["b1"],["c1"],["f4"]],
+ ["ÖV-Begleitdienst","Stadt Zürich","Alltag",["a4"],["b1"],["c1"],["f4"]],
+ ["Rotkreuz-Duo","Begleitung im Alltag","Alltag",["a4"],["b1"],["c1"],["f1", "f4"]],
+ ["Rotkreuz-Grüezi","","Alltag",["a4"],["b1"],["c1"],["f1", "f4"]],
+ ["Situationsabklärung","","Alltag",["a4","a1"],["b1","b2"],["c1"],["f4", "f3"]],
+ ["Villa Vita","Tagesstätte","Alltag",["a4"],["b1","b4"],["c1"],["f4", "f1"]],
+ ["Kinderbetreuung zu Hause","","Alltag",["a1"],["b2"],["c1"],["f3"]],
+ ["Sozialberatung","","Alltag",["a1","a3"],["b2","b3"],["c1","c2"],["f3"]],
+ ["Vorsorge- und Nachlassplanung","","Alltag",["a4"],["b1"],["c1"],["f4"]],
+ ["Persönliche Begleitung in schwerer Zeit","","Alltag",["a4"],["b1","b4"],["c1"],["f4", "f1"]],
+ ["Psychosoziale Pflege","","Alltag",["a3"],["b4"],["c1"],["f2"]],
+ ["Young Carers","mit Jugendrotkreuz","Quer",["a2","a1"],["b2","b5"],["c1","cx"],["f3", "f5"]],
+ ["Gesundheitsversorgung für Sans-Papiers","Meditrina","Migration",["a3"],["b3","b4"],["c2"],["f2"]],
+ ["Unterstützung bei der Arbeitssuche","Perspektive Arbeit","Migration",["a3"],["b3"],["c2","c3"],[]],
+ ["Sich treffen und Deutsch üben","Meet'n'Speak","Migration",["a3"],["b3"],["c2"],["f1"]],
+ ["Austausch unter Frauen","Femmes-Tische","Migration",["a1"],["b3","b2"],["c2"],["f1", "f3"]],
+ ["Tandemprogramm «come together»","","Migration",["a3"],["b3"],["c2","cx"],["f1", "fx"]],
+ ["Strategien für den Alltag","SPIRIT","Migration",["a3"],["b3"],["c2"],[]],
+ ["Ankommen in Winterthur und Andelfingen","","Migration",["a3"],["b3"],["c2"],["f1"]],
+ ["Food-Treff «stir it up»","","Migration",["a3"],["b3"],["c2"],["f1"]],
+ ["Begleitung Diplomanerkennung","","Migration",["a3"],["b3","b4"],["c2","c3"],["f2"]],
+ ["Lehrgang Pflegehelfende SRK","","Bildung",["a3"],["b4"],["c3"],["f2"]],
+ ["Deutsch als Zweitsprache","für die Pflege","Bildung",["a3"],["b4","b3"],["c3","c2"],["f2"]],
+ ["Lehrgang Hauswirtschaft und Betreuung","","Bildung",["a3"],["b4"],["c3"],["f2"]],
+ ["Lehrgang Pflegende Angehörige SRK","","Bildung",["a4"],["b1","b2"],["c3","c1"],["f2", "f3", "f4"]],
+ ["Weiterbildungen Pflege und Betreuung","Langzeitpflege, Demenz, Psychiatrie","Bildung",["a3"],["b4","b1"],["c3"],["f2"]],
+ ["Passage SRK","Palliative Care","Bildung",["a4"],["b4","b1"],["c3"],["f2", "f4"]],
+ ["Praktikum Gesundheit und Soziales","","Bildung",["a2"],["b5","b4"],["c3"],["f5", "f2"]],
+ ["CHECK-IN SRK","","Bildung",["a2"],["b5"],["c3"],["f5"]],
+ ["Lehrbegleitung SRK","","Bildung",["a2"],["b5"],["c3"],["f5"]],
+ ["Nannys und Babysitting-Kurs SRK","","Bildung",["a1","a2"],["b2","b5"],["c3"],["f3", "f5"]],
+ ["chili – Konfliktprävention","","Bildung",["a1","a2"],["b5"],["c3"],["f5"]],
+ ["Freiwilligenarbeit","Einsatzmöglichkeiten, Weiterbildung","Quer",[],["bx"],["cx"],["f1", "fx"]],
+ ["Jugendrotkreuz","","Quer",["a2"],["b5","bx"],["cx"],["f5", "fx"]],
+ ["Corporate Volunteering","","Quer",["a3"],["bx"],["cx"],["fx"]]
+];
+const IDX={A:3,B:4,C:5,F:6};
+let V="C", BER="", LP="";
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+const FR={f1:[3,2,2,2],f2:[1,1,3,3],f3:[3,1,3,2],f4:[2,3,2,1],f5:[2,1,3,3]};
+const FRL=["Privatspenden","Legate","Stiftungen","Firmen"];
+function fr(th){
+  let h='<tr class="frh"><td colspan="'+(th.length+2)+'">Relevanz für die Mittelbeschaffung <span class="ann">Einschätzung, mit Fundraising zu validieren</span></td></tr>';
+  FRL.forEach((l,i)=>{h+='<tr class="frr"><td>'+l+'</td><td></td>'+th.map(t=>{const v=FR[t[0]];return '<td>'+(v?'<span class="dots">'+"●".repeat(v[i])+"○".repeat(3-v[i])+'</span>':'–')+'</td>'}).join('')+'</tr>';});
+  return h;
+}
+function render(){
+  const th=THEMES[V], rows=OFFERS.filter(o=>(!BER||o[2]===BER)&&(!LP||o[3].includes(LP)));
+  let h='<thead><tr><th>Angebot</th><th>Fachbereich</th>'+th.map(t=>'<th class="t">'+esc(t[1])+'</th>').join('')+'</tr></thead><tbody>';
+  rows.forEach(o=>{
+    const as=o[IDX[V]];
+    h+='<tr><td class="of">'+esc(o[0])+(o[1]?'<small>'+esc(o[1])+'</small>':'')+'</td><td class="b">'+o[2]+'</td>';
+    th.forEach(t=>{const i=as.indexOf(t[0]);h+=i===0?'<td class="m" title="Hauptthema">●</td>':i>0?'<td class="m s" title="trägt auch bei">○</td>':'<td class="m"></td>';});
+    h+='</tr>';
+  });
+  const none=V==="F"?0:rows.filter(o=>o[IDX[V]].length===0).length;
+  h+='</tbody><tfoot><tr><td>Angebote je Thema</td><td>'+(none?'<span class="gap">'+none+' ohne Thema</span>':'')+'</td>'+th.map(t=>{const n=rows.filter(o=>o[IDX[V]].includes(t[0])).length;return '<td>'+n+'</td>'}).join('')+'</tr><tr><td>Fachbereiche je Thema</td><td></td>'+th.map(t=>{const n=new Set(rows.filter(o=>o[IDX[V]].includes(t[0])&&o[2]!=="Quer").map(o=>o[2])).size;return '<td>'+n+' von 3</td>'}).join('')+'</tr>'+(V==="F"?fr(th):'')+'</tfoot>';
+  document.getElementById("mx").innerHTML=h;
+}
+function bind(id,attr,set){document.querySelectorAll('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#'+id+' button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));set(b.dataset[attr]);render();}))}
+bind("segVar","v",v=>V=v); bind("segBer","b",b=>BER=b); bind("segLp","l",l=>LP=l);
+render();
+// Hinweis zum Umschalten, verschwindet nach erster Nutzung
+(function(){const c=document.getElementById("ctl"),h=document.getElementById("hint");
+document.querySelectorAll("#segVar button").forEach(b=>b.addEventListener("click",()=>{c.classList.remove("nudge");h.classList.add("gone");setTimeout(()=>h.remove(),400);},{once:true}));})();
+// Slideshow
+const DECK={n:0,dir:"folien/",pdf:""};
+(function(){const N=DECK.n;if(!N)return;
+const img=document.getElementById("slide"),ph=document.getElementById("ph"),pv=document.getElementById("prev"),nx=document.getElementById("next"),ct=document.getElementById("count"),th=document.getElementById("thumbs"),pdf=document.getElementById("pdf");
+const src=i=>DECK.dir+String(i+1).padStart(2,"0")+".jpg";let i=0;
+ph.remove();img.hidden=false;pv.hidden=false;nx.hidden=false;
+if(DECK.pdf){pdf.href=DECK.pdf;pdf.setAttribute("download","");pdf.classList.remove("off");pdf.removeAttribute("aria-disabled");}
+for(let k=0;k<N;k++){const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Folie "+(k+1));b.innerHTML='<img loading="lazy" alt="" src="'+src(k)+'">';b.onclick=()=>go(k);th.appendChild(b);}
+function go(k){i=Math.max(0,Math.min(N-1,k));img.src=src(i);img.alt="Folie "+(i+1)+" von "+N;ct.textContent=(i+1)+" / "+N;pv.disabled=i===0;nx.disabled=i===N-1;
+th.querySelectorAll("button").forEach((b,j)=>{b.setAttribute("aria-current",String(j===i));if(j===i)b.scrollIntoView({block:"nearest",inline:"nearest"});});}
+pv.onclick=()=>go(i-1);nx.onclick=()=>go(i+1);
+document.getElementById("stage").tabIndex=0;
+document.getElementById("stage").addEventListener("keydown",e=>{if(e.key==="ArrowLeft")go(i-1);if(e.key==="ArrowRight")go(i+1);});
+let x0=null;const st=document.getElementById("stage");st.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
+st.addEventListener("touchend",e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)go(i+(d<0?1:-1));x0=null;});
+go(0);})();
+</script>
+
+</body></html>

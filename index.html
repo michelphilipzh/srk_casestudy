@@ -205,8 +205,8 @@ footer a{color:inherit}
 
 <section>
   <div class="levels">
-    <div class="lv"><span class="k">Leitthemen · ordnen</span><span class="v">Stabil, nah an den Geschäftsbereichen<small><span class="tag">Selbstbestimmt leben</span><span class="tag">Ankommen und teilhaben</span><span class="tag">Chancen durch Bildung</span></small></span><span class="w">Website, Jahresbericht, News-Tags</span></div>
-    <div class="lv new"><span class="k">Fokusthemen · verbinden</span><span class="v">Gesellschaftliche Anliegen über alle Fachbereiche<small><span class="tag">Gemeinsam statt einsam</span><span class="tag">Pflege und Betreuung sichern</span><span class="tag">Familien entlasten</span><a class="tag" href="#beispiel">Selbstbestimmt älter werden ↓</a><span class="tag">Chancen für junge Menschen</span></small></span><span class="w">Kampagnen, Medien, Spendenzwecke und Gönnerkommunikation – 2 pro Jahr</span></div>
+    <div class="lv"><span class="k">Leitthemen · ordnen</span><span class="v">Stabil, wie heute auf Website und im Jahresbericht<small><span class="tag">Unterstützung im Alltag</span><span class="tag">Bei der Integration begleiten</span><span class="tag">Lernen für jedes Alter</span></small></span><span class="w">Website, Jahresbericht, News-Tags</span></div>
+    <div class="lv new"><span class="k">Fokusthemen · verbinden</span><span class="v">Gesellschaftliche Anliegen über alle Fachbereiche<small><span class="tag">Gemeinsam statt einsam</span><span class="tag">Pflege und Betreuung sichern</span><span class="tag">Familien entlasten</span><a class="tag" href="#beispiel">Selbstbestimmt älter werden ↓</a><span class="tag">Chancen für junge Menschen</span><span class="tag">Niemand bleibt aussen vor</span></small></span><span class="w">Kampagnen, Medien, Spendenzwecke und Gönnerkommunikation – 2 pro Jahr</span></div>
   </div>
   <p class="note">Kriterien für ein Fokusthema: mindestens drei Fachbereiche tragen bei, Freiwillige haben eine Rolle, es taugt für Spenden und hat einen aktuellen Anlass. Lebensphasen sind keine eigene Ordnung, sondern eine Zielgruppen-Linse: Der Filter «Für wen» zeigt, welche Angebote eines Themas Kinder und Familien, junge Menschen, Erwachsene oder ältere Menschen erreichen.</p>
 </section>
@@ -297,52 +297,52 @@ footer a{color:inherit}
 const THEMES={
   A:[["a1","Kindheit & Familie"],["a2","Jugend & Berufseinstieg"],["a3","Erwerbsleben & Weiterbildung"],["a4","Alter & Lebensende"]],
   B:[["b1","Selbstbestimmt älter werden"],["b2","Familien entlasten"],["b3","Ankommen und teilhaben"],["b4","Gesundheit & Pflege stärken"],["b5","Chancen für junge Menschen"],["bx","quer: Mitmachen"]],
-  F:[["f1","Gemeinsam statt einsam"],["f2","Pflege und Betreuung sichern"],["f3","Familien entlasten"],["f4","Selbstbestimmt älter werden"],["f5","Chancen für junge Menschen"],["fx","quer: Mitmachen"]],
-  C:[["c1","Selbstbestimmt leben"],["c2","Ankommen und teilhaben"],["c3","Chancen durch Bildung"],["cx","quer: Mitmachen und unterstützen"]]
+  F:[["f1","Gemeinsam statt einsam"],["f2","Pflege und Betreuung sichern"],["f3","Familien entlasten"],["f4","Selbstbestimmt älter werden"],["f5","Chancen für junge Menschen"],["f6","Niemand bleibt aussen vor"],["fx","quer: Mitmachen"]],
+  C:[["c1","Unterstützung im Alltag"],["c2","Bei der Integration begleiten"],["c3","Lernen für jedes Alter"],["cx","quer: Mitmachen und unterstützen"]]
 };
 // [Angebot, Zusatz, Fachbereich, A, B, C] – erstes Thema = Hauptthema
 const OFFERS=[
- ["Rotkreuz-Fahrdienst","","Alltag",["a4"],["b1"],["c1"],["f4", "fx"]],
- ["Rotkreuz-Notruf","","Alltag",["a4"],["b1"],["c1"],["f4"]],
- ["ÖV-Begleitdienst","Stadt Zürich","Alltag",["a4"],["b1"],["c1"],["f4"]],
- ["Rotkreuz-Duo","Begleitung im Alltag","Alltag",["a4"],["b1"],["c1"],["f1", "f4"]],
- ["Rotkreuz-Grüezi","","Alltag",["a4"],["b1"],["c1"],["f1", "f4"]],
- ["Situationsabklärung","","Alltag",["a4","a1"],["b1","b2"],["c1"],["f4", "f3"]],
- ["Villa Vita","Tagesstätte","Alltag",["a4"],["b1","b4"],["c1"],["f4", "f1"]],
- ["Kinderbetreuung zu Hause","","Alltag",["a1"],["b2"],["c1"],["f3"]],
- ["Sozialberatung","","Alltag",["a1","a3"],["b2","b3"],["c1","c2"],["f3"]],
- ["Vorsorge- und Nachlassplanung","","Alltag",["a4"],["b1"],["c1"],["f4"]],
- ["Persönliche Begleitung in schwerer Zeit","","Alltag",["a4"],["b1","b4"],["c1"],["f4", "f1"]],
- ["Psychosoziale Pflege","","Alltag",["a3"],["b4"],["c1"],["f2"]],
- ["Young Carers","mit Jugendrotkreuz","Quer",["a2","a1"],["b2","b5"],["c1","cx"],["f3", "f5"]],
- ["Gesundheitsversorgung für Sans-Papiers","Meditrina","Migration",["a3"],["b3","b4"],["c2"],["f2"]],
- ["Unterstützung bei der Arbeitssuche","Perspektive Arbeit","Migration",["a3"],["b3"],["c2","c3"],[]],
- ["Sich treffen und Deutsch üben","Meet'n'Speak","Migration",["a3"],["b3"],["c2"],["f1"]],
- ["Austausch unter Frauen","Femmes-Tische","Migration",["a1"],["b3","b2"],["c2"],["f1", "f3"]],
- ["Tandemprogramm «come together»","","Migration",["a3"],["b3"],["c2","cx"],["f1", "fx"]],
- ["Strategien für den Alltag","SPIRIT","Migration",["a3"],["b3"],["c2"],[]],
- ["Ankommen in Winterthur und Andelfingen","","Migration",["a3"],["b3"],["c2"],["f1"]],
- ["Food-Treff «stir it up»","","Migration",["a3"],["b3"],["c2"],["f1"]],
- ["Begleitung Diplomanerkennung","","Migration",["a3"],["b3","b4"],["c2","c3"],["f2"]],
- ["Lehrgang Pflegehelfende SRK","","Bildung",["a3"],["b4"],["c3"],["f2"]],
- ["Deutsch als Zweitsprache","für die Pflege","Bildung",["a3"],["b4","b3"],["c3","c2"],["f2"]],
- ["Lehrgang Hauswirtschaft und Betreuung","","Bildung",["a3"],["b4"],["c3"],["f2"]],
- ["Lehrgang Pflegende Angehörige SRK","","Bildung",["a4"],["b1","b2"],["c3","c1"],["f2", "f3", "f4"]],
- ["Weiterbildungen Pflege und Betreuung","Langzeitpflege, Demenz, Psychiatrie","Bildung",["a3"],["b4","b1"],["c3"],["f2"]],
- ["Passage SRK","Palliative Care","Bildung",["a4"],["b4","b1"],["c3"],["f2", "f4"]],
- ["Praktikum Gesundheit und Soziales","","Bildung",["a2"],["b5","b4"],["c3"],["f5", "f2"]],
- ["CHECK-IN SRK","","Bildung",["a2"],["b5"],["c3"],["f5"]],
- ["Lehrbegleitung SRK","","Bildung",["a2"],["b5"],["c3"],["f5"]],
- ["Nannys und Babysitting-Kurs SRK","","Bildung",["a1","a2"],["b2","b5"],["c3"],["f3", "f5"]],
- ["chili – Konfliktprävention","","Bildung",["a1","a2"],["b5"],["c3"],["f5"]],
- ["Freiwilligenarbeit","Einsatzmöglichkeiten, Weiterbildung","Quer",[],["bx"],["cx"],["f1", "fx"]],
- ["Jugendrotkreuz","","Quer",["a2"],["b5","bx"],["cx"],["f5", "fx"]],
- ["Corporate Volunteering","","Quer",["a3"],["bx"],["cx"],["fx"]]
+ ["Rotkreuz-Fahrdienst", "", "Alltag", ["a4"], ["b1"], ["c1"], ["f4", "fx", "f6"]],
+ ["Rotkreuz-Notruf", "", "Alltag", ["a4"], ["b1"], ["c1"], ["f4"]],
+ ["ÖV-Begleitdienst", "Stadt Zürich", "Alltag", ["a4"], ["b1"], ["c1"], ["f4", "f6"]],
+ ["Rotkreuz-Duo", "Begleitung im Alltag", "Alltag", ["a4"], ["b1"], ["c1"], ["f1", "f4", "f6"]],
+ ["Rotkreuz-Grüezi", "", "Alltag", ["a4"], ["b1"], ["c1"], ["f1", "f4", "f6"]],
+ ["Situationsabklärung", "", "Alltag", ["a4", "a1"], ["b1", "b2"], ["c1"], ["f4", "f3"]],
+ ["Villa Vita", "Tagesstätte", "Alltag", ["a4"], ["b1", "b4"], ["c1"], ["f4", "f1", "f6"]],
+ ["Kinderbetreuung zu Hause", "", "Alltag", ["a1"], ["b2"], ["c1"], ["f3"]],
+ ["Sozialberatung", "", "Alltag", ["a1", "a3"], ["b2", "b3"], ["c1", "c2"], ["f3"]],
+ ["Vorsorge- und Nachlassplanung", "", "Alltag", ["a4"], ["b1"], ["c1"], ["f4"]],
+ ["Persönliche Begleitung in schwerer Zeit", "", "Alltag", ["a4"], ["b1", "b4"], ["c1"], ["f4", "f1"]],
+ ["Psychosoziale Pflege", "", "Alltag", ["a3"], ["b4"], ["c1"], ["f2"]],
+ ["Young Carers", "mit Jugendrotkreuz", "Quer", ["a2", "a1"], ["b2", "b5"], ["c1", "cx"], ["f3", "f5"]],
+ ["Gesundheitsversorgung für Sans-Papiers", "Meditrina", "Migration", ["a3"], ["b3", "b4"], ["c2"], ["f2"]],
+ ["Unterstützung bei der Arbeitssuche", "Perspektive Arbeit", "Migration", ["a3"], ["b3"], ["c2", "c3"], ["f6"]],
+ ["Sich treffen und Deutsch üben", "Meet'n'Speak", "Migration", ["a3"], ["b3"], ["c2"], ["f6", "f1"]],
+ ["Austausch unter Frauen", "Femmes-Tische", "Migration", ["a1"], ["b3", "b2"], ["c2"], ["f1", "f3", "f6"]],
+ ["Tandemprogramm «come together»", "", "Migration", ["a3"], ["b3"], ["c2", "cx"], ["f6", "f1", "fx"]],
+ ["Strategien für den Alltag", "SPIRIT", "Migration", ["a3"], ["b3"], ["c2"], ["f6"]],
+ ["Ankommen in Winterthur und Andelfingen", "", "Migration", ["a3"], ["b3"], ["c2"], ["f6", "f1"]],
+ ["Food-Treff «stir it up»", "", "Migration", ["a3"], ["b3"], ["c2"], ["f6", "f1"]],
+ ["Begleitung Diplomanerkennung", "", "Migration", ["a3"], ["b3", "b4"], ["c2", "c3"], ["f2", "f6"]],
+ ["Lehrgang Pflegehelfende SRK", "", "Bildung", ["a3"], ["b4"], ["c3"], ["f2"]],
+ ["Deutsch als Zweitsprache", "für die Pflege", "Bildung", ["a3"], ["b4", "b3"], ["c3", "c2"], ["f2", "f6"]],
+ ["Lehrgang Hauswirtschaft und Betreuung", "", "Bildung", ["a3"], ["b4"], ["c3"], ["f2"]],
+ ["Lehrgang Pflegende Angehörige SRK", "", "Bildung", ["a4"], ["b1", "b2"], ["c3", "c1"], ["f2", "f3", "f4"]],
+ ["Weiterbildungen Pflege und Betreuung", "Langzeitpflege, Demenz, Psychiatrie", "Bildung", ["a3"], ["b4", "b1"], ["c3"], ["f2"]],
+ ["Passage SRK", "Palliative Care", "Bildung", ["a4"], ["b4", "b1"], ["c3"], ["f2", "f4"]],
+ ["Praktikum Gesundheit und Soziales", "", "Bildung", ["a2"], ["b5", "b4"], ["c3"], ["f5", "f2", "f6"]],
+ ["CHECK-IN SRK", "", "Bildung", ["a2"], ["b5"], ["c3"], ["f5", "f6"]],
+ ["Lehrbegleitung SRK", "", "Bildung", ["a2"], ["b5"], ["c3"], ["f5", "f6"]],
+ ["Nannys und Babysitting-Kurs SRK", "", "Bildung", ["a1", "a2"], ["b2", "b5"], ["c3"], ["f3", "f5"]],
+ ["chili – Konfliktprävention", "", "Bildung", ["a1", "a2"], ["b5"], ["c3"], ["f5"]],
+ ["Freiwilligenarbeit", "Einsatzmöglichkeiten, Weiterbildung", "Quer", [], ["bx"], ["cx"], ["f1", "fx", "f6"]],
+ ["Jugendrotkreuz", "", "Quer", ["a2"], ["b5", "bx"], ["cx"], ["f5", "fx", "f6"]],
+ ["Corporate Volunteering", "", "Quer", ["a3"], ["bx"], ["cx"], ["fx"]]
 ];
 const IDX={A:3,B:4,C:5,F:6};
 let V="C", BER="", LP="";
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
-const FR={f1:[3,2,2,2],f2:[1,1,3,3],f3:[3,1,3,2],f4:[2,3,2,1],f5:[2,1,3,3]};
+const FR={f1:[3,2,2,2],f2:[1,1,3,3],f3:[3,1,3,2],f4:[2,3,2,1],f5:[2,1,3,3],f6:[3,2,3,2]};
 const FRL=["Privatspenden","Legate","Stiftungen","Firmen"];
 function fr(th){
   let h='<tr class="frh"><td colspan="'+(th.length+2)+'">Relevanz für die Mittelbeschaffung <span class="ann">Einschätzung, mit Fundraising zu validieren</span></td></tr>';

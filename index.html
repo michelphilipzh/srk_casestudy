@@ -395,12 +395,12 @@ el.innerHTML=h;el.style.display="flex";el.style.flexDirection="column";el.style.
 (function(){const c=document.getElementById("ctl"),h=document.getElementById("hint");
 document.querySelectorAll("#segVar button").forEach(b=>b.addEventListener("click",()=>{c.classList.remove("nudge");h.classList.add("gone");setTimeout(()=>h.remove(),400);},{once:true}));})();
 // Slideshow
-const DECK={n:0,dir:"folien/",pdf:""};
+const DECK={n:22,dir:"folien/",pdf:"https://michelphilipzh.github.io/srk_casestudy/SRK_Zuerich_Case_Study_Philip_Michel.pdf"};
 (function(){const N=DECK.n;if(!N)return;
 const img=document.getElementById("slide"),ph=document.getElementById("ph"),pv=document.getElementById("prev"),nx=document.getElementById("next"),ct=document.getElementById("count"),th=document.getElementById("thumbs"),pdf=document.getElementById("pdf");
 const src=i=>DECK.dir+String(i+1).padStart(2,"0")+".jpg";let i=0;
 ph.remove();img.hidden=false;pv.hidden=false;nx.hidden=false;
-if(DECK.pdf){pdf.href=DECK.pdf;pdf.setAttribute("download","");pdf.classList.remove("off");pdf.removeAttribute("aria-disabled");}
+if(DECK.pdf){pdf.href=DECK.pdf;pdf.setAttribute("target","_blank");pdf.setAttribute("rel","noopener");pdf.classList.remove("off");pdf.removeAttribute("aria-disabled");}
 for(let k=0;k<N;k++){const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Folie "+(k+1));b.innerHTML='<img loading="lazy" alt="" src="'+src(k)+'">';b.onclick=()=>go(k);th.appendChild(b);}
 function go(k){i=Math.max(0,Math.min(N-1,k));img.src=src(i);img.alt="Folie "+(i+1)+" von "+N;ct.textContent=(i+1)+" / "+N;pv.disabled=i===0;nx.disabled=i===N-1;
 th.querySelectorAll("button").forEach((b,j)=>{b.setAttribute("aria-current",String(j===i));if(j===i)b.scrollIntoView({block:"nearest",inline:"nearest"});});}

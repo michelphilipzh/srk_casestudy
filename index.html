@@ -380,6 +380,9 @@ el.innerHTML=h;el.style.display="flex";el.style.flexDirection="column";el.style.
 // Hinweis zum Umschalten, verschwindet nach erster Nutzung
 (function(){const c=document.getElementById("ctl"),h=document.getElementById("hint");
 document.querySelectorAll("#segVar button").forEach(b=>b.addEventListener("click",()=>{c.classList.remove("nudge");h.classList.add("gone");setTimeout(()=>h.remove(),400);},{once:true}));})();
+// Beim Öffnen immer oben starten (ausser bei Sprungmarke)
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){window.scrollTo(0,0);addEventListener("load",()=>{if(!location.hash)window.scrollTo(0,0);});}
 // Slideshow
 const DECK={n:23,dir:"folien/",pdf:"https://michelphilipzh.github.io/srk_casestudy/SRK_Zuerich_Case_Study_Philip_Michel.pdf"};
 (function(){const N=DECK.n;if(!N)return;

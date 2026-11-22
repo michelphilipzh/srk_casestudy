@@ -389,7 +389,7 @@ ph.remove();img.hidden=false;pv.hidden=false;nx.hidden=false;
 if(DECK.pdf){pdf.href=DECK.pdf;pdf.setAttribute("target","_blank");pdf.setAttribute("rel","noopener");pdf.classList.remove("off");pdf.removeAttribute("aria-disabled");}
 for(let k=0;k<N;k++){const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Folie "+(k+1));b.innerHTML='<img loading="lazy" alt="" src="'+src(k)+'">';b.onclick=()=>go(k);th.appendChild(b);}
 function go(k){i=Math.max(0,Math.min(N-1,k));img.src=src(i);img.alt="Folie "+(i+1)+" von "+N;ct.textContent=(i+1)+" / "+N;pv.disabled=i===0;nx.disabled=i===N-1;
-th.querySelectorAll("button").forEach((b,j)=>{b.setAttribute("aria-current",String(j===i));if(j===i)b.scrollIntoView({block:"nearest",inline:"nearest"});});}
+th.querySelectorAll("button").forEach((b,j)=>{b.setAttribute("aria-current",String(j===i));if(j===i){const L=b.offsetLeft-th.offsetLeft,R=L+b.offsetWidth;if(L<th.scrollLeft)th.scrollLeft=L;else if(R>th.scrollLeft+th.clientWidth)th.scrollLeft=R-th.clientWidth;}});}
 pv.onclick=()=>go(i-1);nx.onclick=()=>go(i+1);
 document.getElementById("stage").tabIndex=0;
 document.getElementById("stage").addEventListener("keydown",e=>{if(e.key==="ArrowLeft")go(i-1);if(e.key==="ArrowRight")go(i+1);});

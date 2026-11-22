@@ -111,6 +111,12 @@ tr.kb td{font-style:italic;font-weight:600;font-size:14.5px}
 .cs-k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
 .cs-t{font-size:15px;font-weight:600}
 .cs-r{font-size:14px;color:var(--muted)}
+.cs-band{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;cursor:pointer}
+@media (hover:hover){.cs-band:hover .cs-t{color:var(--red)}}
+.cs-band:focus-visible{outline:2px solid var(--red);outline-offset:-4px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--surface)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+@media (max-width:600px){.cs-band{padding-block:10px}.cs-t{font-size:13.5px;line-height:1.3}.cs-r{font-size:12.5px}.cs-k{font-size:11px}}
 .draft{max-width:68ch;font-size:14px;padding:12px 16px;border-left:3px solid var(--red);background:var(--rose2);color:var(--ink)}
 .how{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
 .how em{font-style:normal;font-weight:600}
@@ -173,7 +179,7 @@ footer a{color:inherit}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
-<div class="cs-band"><div class="cs-in">
+<div class="cs-band" id="topbar" role="button" tabindex="0" aria-label="Zum Seitenanfang" title="Zum Seitenanfang"><div class="cs-in">
   <div class="cs-l"><span class="cs-k">Case Study</span><span class="cs-t">Leitung Marketing, Kommunikation &amp; Mittelbeschaffung · SRK Kanton Zürich</span></div>
   <div class="cs-r">Philip Michel · November 2026</div>
 </div></div>
@@ -383,6 +389,10 @@ document.querySelectorAll("#segVar button").forEach(b=>b.addEventListener("click
 // Beim Öffnen immer oben starten (ausser bei Sprungmarke)
 try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
 if(!location.hash){window.scrollTo(0,0);addEventListener("load",()=>{if(!location.hash)window.scrollTo(0,0);});}
+// Kopfzeile: Klick führt zum Seitenanfang
+(function(){const t=document.getElementById("topbar");if(!t)return;
+const up=()=>{const r=matchMedia("(prefers-reduced-motion: reduce)").matches;window.scrollTo({top:0,behavior:r?"auto":"smooth"});if(location.hash)history.replaceState(null,"",location.pathname+location.search);};
+t.addEventListener("click",up);t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();up();}});})();
 // Slideshow
 const DECK={n:23,dir:"folien/",pdf:"https://michelphilipzh.github.io/srk_casestudy/SRK_Zuerich_Case_Study_Philip_Michel.pdf"};
 (function(){const N=DECK.n;if(!N)return;

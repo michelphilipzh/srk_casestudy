@@ -190,7 +190,7 @@ footer a{color:inherit}
     <a class="choice" href="#praesentation">
       <span class="num">01 · Präsentation</span>
       <h2>Folien durchblättern und herunterladen</h2>
-      <p>Präsentation vom 23.11.2026 inklusive Backup-Folien – als Slideshow und als PDF.</p>
+      <p>Präsentation vom 23.11.2026 – als Slideshow und als PDF.</p>
       <span class="go">Zur Präsentation ↓</span>
     </a>
     <a class="choice" href="#exkurs">
@@ -204,7 +204,7 @@ footer a{color:inherit}
 <section id="praesentation">
   <span class="eyebrow">01 · Präsentation</span>
   <h2 style="font-size:clamp(26px,3.6vw,36px)">Präsentation vom 23.11.2026</h2>
-  <p>Alle Folien inklusive Backup zum Durchblättern – mit Pfeiltasten, Wischen oder über die Vorschaubilder. Und als PDF zum Herunterladen.</p>
+  <p>Alle Folien zum Durchblättern – mit Pfeiltasten, Wischen oder über die Vorschaubilder. Und als PDF zum Herunterladen.</p>
   <div class="deck">
     <div class="stage" id="stage" aria-roledescription="Slideshow" aria-label="Folien der Präsentation">
       <img id="slide" alt="" hidden>
@@ -394,7 +394,7 @@ if(!location.hash){window.scrollTo(0,0);addEventListener("load",()=>{if(!locatio
 const up=()=>{const r=matchMedia("(prefers-reduced-motion: reduce)").matches;window.scrollTo({top:0,behavior:r?"auto":"smooth"});if(location.hash)history.replaceState(null,"",location.pathname+location.search);};
 t.addEventListener("click",up);t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();up();}});})();
 // Slideshow
-const DECK={n:23,dir:"folien/",pdf:"https://michelphilipzh.github.io/srk_casestudy/SRK_Zuerich_Case_Study_Philip_Michel.pdf"};
+const DECK={n:12,dir:"folien/",pdf:"https://michelphilipzh.github.io/srk_casestudy/SRK_Zuerich_Case_Study_Philip_Michel.pdf"};
 (function(){const N=DECK.n;if(!N)return;
 const img=document.getElementById("slide"),ph=document.getElementById("ph"),pv=document.getElementById("prev"),nx=document.getElementById("next"),ct=document.getElementById("count"),th=document.getElementById("thumbs"),pdf=document.getElementById("pdf");
 const src=i=>DECK.dir+String(i+1).padStart(2,"0")+".jpg";let i=0;

@@ -178,26 +178,24 @@ footer a{color:inherit}
   <div class="cs-r">Philip Michel · November 2026</div>
 </div></div>
 <div class="wrap">
-<section class="start" aria-labelledby="start-h">
-  <h1 id="start-h">Willkommen – was möchten Sie ansehen?</h1>
-  <div class="choices">
-    <a class="choice" href="#exkurs">
-      <span class="num">01 · Exkurs zur Case Study</span>
-      <h2>Themenarchitektur und Ansprache</h2>
-      <p>Überlegungen, wie Themen das Angebot ordnen und Fachbereiche verbinden – mit Werkzeug zum Filtern und dem Zielhaus als Beispiel.</p>
-      <span class="go">Zum Exkurs ↓</span>
-    </a>
-    <a class="choice" href="#praesentation">
-      <span class="num">02 · Präsentation</span>
-      <h2>Folien durchblättern und herunterladen</h2>
-      <p>Präsentation vom 23.11.2026 inklusive Backup-Folien – als Slideshow und als PDF.</p>
-      <span class="go">Zur Präsentation ↓</span>
-    </a>
+<section id="praesentation">
+  <span class="eyebrow">01 · Präsentation</span>
+  <h1>Präsentation vom 23.11.2026</h1>
+  <p>Alle Folien inklusive Backup zum Durchblättern – mit Pfeiltasten, Wischen oder über die Vorschaubilder. Und als PDF zum Herunterladen.</p>
+  <div class="deck">
+    <div class="stage" id="stage" aria-roledescription="Slideshow" aria-label="Folien der Präsentation">
+      <img id="slide" alt="" hidden>
+      <div class="ph" id="ph"><b>Folien folgen nach der Präsentation</b><span>Hier erscheinen die Folien zum Durchblättern.</span></div>
+      <button class="nav prev" id="prev" type="button" aria-label="Vorherige Folie" hidden>‹</button>
+      <button class="nav next" id="next" type="button" aria-label="Nächste Folie" hidden>›</button>
+    </div>
+    <div class="bar"><span class="count" id="count"></span><a class="btn off" id="pdf" href="#" aria-disabled="true">PDF herunterladen</a></div>
+    <div class="thumbs" id="thumbs"></div>
   </div>
-  <div class="sep"></div>
 </section>
+<div class="sep" style="margin-top:8px"></div>
 <header id="exkurs">
-  <span class="eyebrow">01 · Exkurs · Idee zur Diskussion · Priorität 2 · Steuerungsrahmen</span>
+  <span class="eyebrow">02 · Exkurs · Idee zur Diskussion · Priorität 2 · Steuerungsrahmen</span>
   <h2 style="font-size:clamp(26px,3.6vw,36px)">Themenarchitektur SRK Zürich</h2>
   <div class="rule"></div>
   <p class="lead">Rund 35 Angebote, heute in sieben Ordnungssystemen nebeneinander. Die Idee: Zwei Ebenen von Themen schaffen Orientierung. Leitthemen ordnen das Angebot, Fokusthemen verbinden alle Fachbereiche zu einer Geschichte.</p>
@@ -268,21 +266,7 @@ footer a{color:inherit}
   </div>
 </section>
 
-<section id="praesentation">
-  <span class="eyebrow">02 · Präsentation</span>
-  <h2>Präsentation vom 23.11.2026</h2>
-  <p>Alle Folien inklusive Backup zum Durchblättern – mit Pfeiltasten, Wischen oder über die Vorschaubilder. Und als PDF zum Herunterladen.</p>
-  <div class="deck">
-    <div class="stage" id="stage" aria-roledescription="Slideshow" aria-label="Folien der Präsentation">
-      <img id="slide" alt="" hidden>
-      <div class="ph" id="ph"><b>Folien folgen nach der Präsentation</b><span>Hier erscheinen die Folien zum Durchblättern.</span></div>
-      <button class="nav prev" id="prev" type="button" aria-label="Vorherige Folie" hidden>‹</button>
-      <button class="nav next" id="next" type="button" aria-label="Nächste Folie" hidden>›</button>
-    </div>
-    <div class="bar"><span class="count" id="count"></span><a class="btn off" id="pdf" href="#" aria-disabled="true">PDF herunterladen</a></div>
-    <div class="thumbs" id="thumbs"></div>
-  </div>
-</section>
+
 
 <footer>
   <span>Quellen:
